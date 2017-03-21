@@ -1,7 +1,0 @@
-supysonic:
-  build: .
-  volumes:
-    - ./data:/data
-    - ./music:/music
-  ports:
-    - 8000:8000

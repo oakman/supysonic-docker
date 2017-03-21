@@ -13,8 +13,8 @@ RUN echo "deb http://www.deb-multimedia.org jessie main non-free" > /etc/apt/sou
 
 COPY app.py /app/app.py
 COPY supysonic.conf /etc/supysonic
+COPY docker-entrypoint.sh /
 
-# 4 workers, 180 secs timeout due to transcoding
-CMD gunicorn app --bind 0.0.0.0 -w ${WORKERS:-4} -t ${TIMEOUT:-180}
 VOLUME ["/data", "/music"]
 EXPOSE 8000
+ENTRYPOINT ["/docker-entrypoint.sh"]
