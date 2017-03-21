@@ -11,6 +11,7 @@ RUN echo "deb http://www.deb-multimedia.org jessie main non-free" > /etc/apt/sou
     apt-get autoremove -y -q && \
     rm -rf /var/lib/apt/lists/*
 
+USER ${PUID:-1001}
 COPY app.py /app/app.py
 COPY supysonic.conf /etc/supysonic
 COPY docker-entrypoint.sh /
