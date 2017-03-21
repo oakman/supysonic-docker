@@ -29,6 +29,7 @@ CREATE TABLE track (
 	genre VARCHAR(256),
 	duration INTEGER NOT NULL,
 	album_id CHAR(36) NOT NULL REFERENCES album,
+	artist_id CHAR(36) NOT NULL REFERENCES artist,
 	bitrate INTEGER NOT NULL,
 	path VARCHAR(4096) NOT NULL,
 	content_type VARCHAR(32) NOT NULL,
@@ -124,4 +125,3 @@ CREATE TABLE playlist_track (
 	track_id CHAR(36) NOT NULL REFERENCES track,
 	PRIMARY KEY(playlist_id, track_id)
 ) DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-

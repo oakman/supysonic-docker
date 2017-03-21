@@ -29,6 +29,7 @@ CREATE TABLE track (
 	genre VARCHAR(256),
 	duration INTEGER NOT NULL,
 	album_id UUID NOT NULL REFERENCES album,
+	artist_id UUID NOT NULL REFERENCES artist,
 	bitrate INTEGER NOT NULL,
 	path VARCHAR(4096) NOT NULL,
 	content_type VARCHAR(32) NOT NULL,
@@ -124,4 +125,3 @@ CREATE TABLE playlist_track (
 	track_id UUID NOT NULL REFERENCES track,
 	PRIMARY KEY(playlist_id, track_id)
 );
-
