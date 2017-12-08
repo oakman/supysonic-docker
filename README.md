@@ -1,7 +1,7 @@
 Supysonic Docker Image
 ==========================
 
-Docker container for [supysonic](https://github.com/spl0k/supysonic)the
+Docker container for [supysonic](https://github.com/spl0k/supysonic) the
 ingenious music server.
 
 Install
